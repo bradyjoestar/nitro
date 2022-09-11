@@ -49,7 +49,7 @@ services:
     container_name: 'blockscout_l1'
     links:
       - postgres_l1:database
-    command: 'sh -c "mix do ecto.create, ecto.migrate; node init/install.js postgres 6432; mix do phx.server"'
+    command: 'sh -c "mix do ecto.create, ecto.migrate; node init/install.js postgres 5432; mix do phx.server"'
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     env_file:
@@ -58,7 +58,7 @@ services:
       ETHEREUM_JSONRPC_VARIANT: 'geth'
       ETHEREUM_JSONRPC_HTTP_URL: http://geth:8545/
       INDEXER_DISABLE_PENDING_TRANSACTIONS_FETCHER: "true"
-      DATABASE_URL: postgresql://postgres:@postgres_l1:6432/blockscout?ssl=false
+      DATABASE_URL: postgresql://postgres:@postgres_l1:5432/blockscout?ssl=false
       ECTO_USE_SSL: "false"
     ports:
       - "4001:4000"
@@ -76,7 +76,7 @@ services:
     volumes:
       - "postgres-data-l1:/var/lib/postgresql/data"
     ports:
-      - "127.0.0.1:8432:6432"
+      - "127.0.0.1:8432:5432"
 
 
   redis:
