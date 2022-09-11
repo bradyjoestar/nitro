@@ -114,7 +114,7 @@ else
     NODES="$NODES staker-unsafe"
 fi
 if $blockscout; then
-    NODES="$NODES blockscout"
+    NODES="$NODES blockscout blockscout_l1"
 fi
 
 if $force_build; then

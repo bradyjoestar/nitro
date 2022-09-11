@@ -180,8 +180,8 @@ COPY --from=node-builder /workspace/target/bin/relay /usr/local/bin/
 COPY --from=machine-versions /workspace/machines /home/user/target/machines
 USER root
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get update && --allow-insecure-repositories \
-    apt-get install -y --allow-insecure-repositories \
+    apt-get update && \
+    apt-get install -y \
     ca-certificates \
     wabt && \
     /usr/sbin/update-ca-certificates && \
@@ -227,8 +227,8 @@ COPY --from=module-root-calc /workspace/target/machines/latest/until-host-io-sta
 COPY --from=module-root-calc /workspace/target/machines/latest/module-root.txt /home/user/target/machines/latest/
 COPY --from=module-root-calc /workspace/target/machines/latest/replay.wasm /home/user/target/machines/latest/
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get update --allow-insecure-repositories && \
-    apt-get install -y --allow-insecure-repositories \
+    apt-get update && \
+    apt-get install -y \
     sudo && \
     chmod -R 555 /home/user/target/machines && \
     adduser user sudo && \
