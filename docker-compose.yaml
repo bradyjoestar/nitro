@@ -242,4 +242,5 @@ volumes:
   poster-data:
   config:
   postgres-data:
+  postgres-data-l1:
 
