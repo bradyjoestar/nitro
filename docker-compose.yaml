@@ -46,9 +46,9 @@ services:
       context: blockscout
       dockerfile: docker/Dockerfile
     restart: always
-    container_name: 'blockscout'
+    container_name: 'blockscout_l1'
     links:
-      - postgres:database
+      - postgres_l1:database
     command: 'sh -c "mix do ecto.create, ecto.migrate; node init/install.js postgres 6432; mix do phx.server"'
     extra_hosts:
       - 'host.docker.internal:host-gateway'
