@@ -18,6 +18,19 @@ git submodule update --init --recursive
 ## l2 balance: 101,000 Ether
 
 
+## inherit data
+## ./test-node.bash  --validate --redundantsequencers 0
+
+
 
 ## L2 precompile contracts
 ## https://github.com/OffchainLabs/nitro/blob/8c36adc97bbb0c3a5ff95b5bd1b18f074a4d25fc/docs/useful-addresses.md
+
+## yarn gen:network
+
+###
+
+curl http://localhost:8545 \
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"method":"eth_getCode","params":["0xf9e79252a1ce1d6da01989971eb44a5b6666efb2","latest"],"id":1,"jsonrpc":"2.0"}'

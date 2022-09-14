@@ -53,7 +53,7 @@ services:
       - "l1data:/root/.ethereum"
       - "l1keystore:/keystore"
       - "config:/config"
-    command: --keystore /keystore --http --http.addr 0.0.0.0 --http.vhosts * --http.api personal,eth,net,web3 --http.corsdomain * --ws --ws.addr 0.0.0.0 --ws.api personal,eth,net,web3,debug,txpool --dev --dev.period 1 --password /root/.ethereum/passphrase --gcmode archive
+    command: --keystore /keystore --http --http.addr 0.0.0.0 --http.vhosts * --http.api personal,eth,net,web3,debug,txpool --http.corsdomain * --ws --ws.addr 0.0.0.0 --ws.api personal,eth,net,web3,debug,txpool --dev --dev.period 1 --password /root/.ethereum/passphrase --gcmode archive
 
   sequencer:
     pid: host # allow debugging
