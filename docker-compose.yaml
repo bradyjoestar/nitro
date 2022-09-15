@@ -61,9 +61,9 @@ services:
       context: .
       target: nitro-node-dev
     ports:
-      - "127.0.0.1:8547:8547"
-      - "127.0.0.1:8548:8548"
-      - "127.0.0.1:9642:9642"
+      - "8547:8547"
+      - "8548:8548"
+      - "9642:9642"
     volumes:
       - "seqdata:/home/user/.arbitrum/local/nitro"
       - "config:/config"
