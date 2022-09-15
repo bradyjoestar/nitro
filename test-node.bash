@@ -140,11 +140,12 @@ if $force_init; then
     # 906e302ee087e7dc2b15b226c6d5f05df0ff35d9c7b75f1080c0baaf5667da67
     # 2c1fca7289205bb4d52ed188b648be71bc6df6aea79e45d6ee5a78800ea51aca
     # use pre-generated accounts
-    docker-compose run --entrypoint sh geth -c "echo 906e302ee087e7dc2b15b226c6d5f05df0ff35d9c7b75f1080c0baaf5667da67 > /root/.ethereum/tmp-funnelkey"
+
+    docker-compose run --entrypoint sh geth -c "echo 2c1fca7289205bb4d52ed188b648be71bc6df6aea79e45d6ee5a78800ea51aca > /root/.ethereum/tmp-funnelkey"
     docker-compose run geth account import --password /root/.ethereum/passphrase --keystore /keystore /root/.ethereum/tmp-funnelkey
     docker-compose run --entrypoint sh geth -c "rm /root/.ethereum/tmp-funnelkey"
 
-    docker-compose run --entrypoint sh geth -c "echo 2c1fca7289205bb4d52ed188b648be71bc6df6aea79e45d6ee5a78800ea51aca > /root/.ethereum/tmp-funnelkey"
+    docker-compose run --entrypoint sh geth -c "echo 906e302ee087e7dc2b15b226c6d5f05df0ff35d9c7b75f1080c0baaf5667da67 > /root/.ethereum/tmp-funnelkey"
     docker-compose run geth account import --password /root/.ethereum/passphrase --keystore /keystore /root/.ethereum/tmp-funnelkey
     docker-compose run --entrypoint sh geth -c "rm /root/.ethereum/tmp-funnelkey"
 
