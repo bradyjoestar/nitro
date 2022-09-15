@@ -34,3 +34,8 @@ curl http://localhost:8545 \
   -X POST \
   -H "Content-Type: application/json" \
   --data '{"method":"eth_getCode","params":["0xf9e79252a1ce1d6da01989971eb44a5b6666efb2","latest"],"id":1,"jsonrpc":"2.0"}'
+
+
+### arbitrum-sdk
+
+cp -r .env-sample .env
