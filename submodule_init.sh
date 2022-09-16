@@ -7,10 +7,21 @@ git submodule update --init --recursive
 ## docker system prune
 
 
+## start pre service
+
+## ./test-node.bash --redundantsequencers 0 --no-blockscout
+
+
+
+
 ## start more service
 ## ./test-node.bash --init --validate --redundantsequencers 3
 
 ## ./test-node.bash --init --validate --redundantsequencers 0
+
+## ./test-node.bash --init --validate --redundantsequencers 0 --no-blockscout
+
+## ./test-node.bash --init  --redundantsequencers 0 --no-blockscout
 
 ## private key: e887f7d17d07cc7b8004053fb8826f6657084e88904bb61590e498ca04704cf2
 ## address : 0x683642c22feDE752415D4793832Ab75EFdF6223c
